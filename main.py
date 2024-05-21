@@ -25,7 +25,7 @@ def filter_items(items, rarity_choice, type_choice):
 items = fetch_items()
 
 rarity_options = ["all", "common", "uncommon", "rare", "legendary", "artifact"]
-type_options = ["all", "weapon", "staff"]  # Add more types as needed
+type_options = ["all", "weapon", "staff"]  # the magical item types
 
 rarity_choice = input("What rarity of magic item are you looking for? : ").strip().lower()
 type_choice = input("What type of magic item are you looking for? : ").strip().lower()
@@ -36,14 +36,21 @@ if rarity_choice in rarity_options and type_choice in type_options:
         item_names = [item['name'] for item in filtered_items]
         items_string = ", ".join(item_names)
         print(f"Here are the {rarity_choice} {type_choice} choices: {items_string}")
-        check = input("Type the one you would like to read more about! ")
-        selected_item = next((item for item in filtered_items if item['name'].lower() == check.lower()), None)
-        if selected_item:
-            print(f"Details about {check}:")
-            print(f"Name: {selected_item['name']}")
-            print(f"Rarity: {selected_item['rarity']}")
-            print(f"Type: {selected_item['type']}")
-        else:
+        check = input("Type the one you would like to read more about! ").strip().lower()
+        
+        # filtering
+        found = False
+        for item in filtered_items:
+            if item['name'].lower() == check:
+                print(f"Details about {item['name']}:")
+                print(f"Name: {item['name']}")
+                print(f"Rarity: {item['rarity']}")
+                print(f"Type: {item['type']}")
+                print(f"Description: {item['description']}")
+                found = True
+                break
+                
+        if not found:
             print(f"{check} not found in the list of {rarity_choice} {type_choice} items.")
     else:
         print(f"No items found for rarity: {rarity_choice} and type: {type_choice}")

@@ -1,7 +1,7 @@
 [
-    {"name": "", "rarity": "", "type": "", "description": ""},
-    {"name": "", "rarity": "", "type": "", "description": ""},
-    {"name": "", "rarity": "", "type": "", "description": ""},
+    {"name": "Dagger +1", "rarity": "uncommon", "type": "weapon", "description": "You have a +1 bonus to attack and damage rolls made with this magic weapon. Proficiency with a dagger allows you to add your proficiency bonus to the attack roll for any attack you make with it."},
+    {"name": "Longsword +1", "rarity": "uncommon", "type": "weapon", "description": "You have a +1 bonus to attack and damage rolls made with this magic weapon. Proficiency with a longsword allows you to add your proficiency bonus to the attack roll for any attack you make with it."},
+    {"name": "Longbow +1", "rarity": "uncommon", "type": "weapon", "description": "You have a +1 bonus to attack and damage rolls made with this magic weapon. Proficiency with a longbow allows you to add your proficiency bonus to the attack roll for any attack you make with it."},
     {"name": "", "rarity": "", "type": "", "description": ""},
     {"name": "", "rarity": "", "type": "", "description": ""}
 ]

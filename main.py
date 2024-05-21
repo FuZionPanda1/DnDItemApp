@@ -2,7 +2,7 @@ import urllib.request
 import json
 
 # Define the raw file URL for your JSON file
-GITHUB_RAW_URL = "https://raw.githubusercontent.com/username/repository/branch/path/to/items.json"
+GITHUB_RAW_URL = "https://raw.githubusercontent.com/FuZionPanda1/DnDItemApp/main/items.json"
 
 def fetch_items():
     try:

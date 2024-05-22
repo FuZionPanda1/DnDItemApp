@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Item Filter</title>
+</head>
+<body>
+    <h1>Magic Item Filter</h1>
+    <form action="/filter" method="post">
+        <label for="rarity_choice">Rarity:</label>
+        <select name="rarity_choice" id="rarity_choice">
+            {% for rarity in rarity_options %}
+                <option value="{{ rarity }}">{{ rarity.capitalize() }}</option>
+            {% endfor %}
+        </select>
+        <label for="type_choice">Type:</label>
+        <select name="type_choice" id="type_choice">
+            {% for type in type_options %}
+                <option value="{{ type }}">{{ type.capitalize() }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Items</title>
+</head>
+<body>
+    <h1>Filtered Items</h1>
+    <p>Rarity: {{ rarity_choice.capitalize() }}</p>
+    <p>Type: {{ type_choice.capitalize() }}</p>
+    <ul>
+        {% for item in items %}
+            <li><a href="/item/{{ item['name'] | lower }}">{{ item['name'] }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to filter</a>
+</body>
+</html>

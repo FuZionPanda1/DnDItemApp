@@ -27,7 +27,7 @@ def filter_items(items, rarity_choice, type_choice):
 items = fetch_items()
 
 rarity_options = ["all", "common", "uncommon", "rare", "legendary", "artifact"]
-type_options = ["all", "weapon", "staff", "woundrous item"]
+type_options = ["all", "weapon", "staff", "wondrous item"]
 
 
 @app.route('/')

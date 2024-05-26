@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <div class="topnav">
+        <a href="/">Home</a>
+    </div>
     <h1>Filtered Items</h1>
     <p>Rarity: {{ rarity_choice.capitalize() }}</p>
     <p>Type: {{ type_choice.capitalize() }}</p>

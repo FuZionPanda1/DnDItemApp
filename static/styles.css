@@ -1,4 +1,6 @@
 html, body {
+    background-color: #f3e9dd;
+    background-image: url("");
     margin: 0;
     padding: 0;
 }

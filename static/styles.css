@@ -27,8 +27,8 @@ html, body {
 }
 
 .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
+    background-color: #ddd;
+    color: black;
 }
 
 /* Center content horizontally */

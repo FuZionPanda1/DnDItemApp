@@ -1,10 +1,11 @@
+/* Reset default margin and padding */
 html, body {
-    background-color: #f3e9dd;
-    background-image: url("");
     margin: 0;
     padding: 0;
+    background-color: #d7b878;
 }
 
+/* Style the top navigation bar */
 .topnav {
     background-color: #333;
     overflow: hidden;
@@ -26,6 +27,105 @@ html, body {
 }
 
 .topnav a.active {
-    background-color: #ddd;
-    color: black;
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Center content horizontally */
+.center-content {
+    text-align: center;
+}
+
+/* Button styles */
+.button {
+    display: inline-block; /* Change display to inline-block */
+    width: auto; /* Make the width fit content */
+    max-width: 200px; /* Set a maximum width for the buttons */
+    padding: 10px 20px; /* Padding for better appearance */
+    font-size: 16px; /* Font size */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 5px #999; /* Box shadow */
+    margin: 10px 5px; /* Add margin */
+}
+
+.button:active {
+    box-shadow: 0 3px #666;
+    transform: translateY(3px);
+}
+
+/* Rarity specific button styles */
+.common {
+    background-color: #b0c4de;
+    color: #fff;
+}
+
+.common:hover {
+    background-color: #9bb6d2;
+}
+
+.uncommon {
+    background-color: #32cd32;
+    color: #fff;
+}
+
+.uncommon:hover {
+    background-color: #2ca02c;
+}
+
+.rare {
+    background-color: #4169e1;
+    color: #fff;
+}
+
+.rare:hover {
+    background-color: #355ec6;
+}
+
+.legendary {
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+.legendary:hover {
+    background-color: #e07a00;
+}
+
+.artifact {
+    background-color: #8a2be2;
+    color: #fff;
+}
+
+.artifact:hover {
+    background-color: #751bcc;
+}
+
+/* Back button style */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 5px #999;
+    margin: 10px 5px;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+.back-button:active {
+    box-shadow: 0 3px #666;
+    transform: translateY(3px);
 }

@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtered Items</title>
+    <title>Results</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="topnav">
         <a href="/">Home</a>
     </div>
-    <h1>Filtered Items</h1>
-    <p>Rarity: {{ rarity_choice.capitalize() }}</p>
-    <p>Type: {{ type_choice.capitalize() }}</p>
-    <ul>
-        {% for item in items %}
-            <li><a href="/item/{{ item['name'] | lower }}">{{ item['name'] }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="/">Back to filter</a>
+    <h1 class="center-content">Filtered Results</h1>
+    <p class="center-content">Here are the Rarirty: ({{ rarity_choice }}) Type: ({{ type_choice }}) choices:</p>
+    {% if items %}
+        <div class="center-content">
+            {% for item in items %}
+                <a href="{{ url_for('item_details', item_name=item['name']) }}" class="button {{ item['rarity'] }}">{{ item['name'] }}</a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="center-content">No items found for rarity: {{ rarity_choice }} and type: {{ type_choice }}</p>
+    {% endif %}
+    <div class="center-content">
+    <a href="/" class="back-button">Back to filter</a>
+    </div>
 </body>
 </html>

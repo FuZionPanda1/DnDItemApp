@@ -6,6 +6,14 @@ app = Flask(__name__)
 
 GITHUB_RAW_URL = "https://raw.githubusercontent.com/FuZionPanda1/DnDItemApp/main/items.json"
 
+RARITY_ORDER = {
+    "common": 1,
+    "uncommon": 2,
+    "rare": 3,
+    "legendary": 4,
+    "artifact": 5
+}
+
 def fetch_items():
     try:
         with urllib.request.urlopen(GITHUB_RAW_URL) as url:
@@ -16,19 +24,17 @@ def fetch_items():
         return []
 
 def filter_items(items, rarity_choice, type_choice):
-    if rarity_choice == "all" and type_choice == "all":
-        return items
-    if rarity_choice == "all":
-        return [item for item in items if item['type'] == type_choice]
-    if type_choice == "all":
-        return [item for item in items if item['rarity'] == rarity_choice]
-    return [item for item in items if item['rarity'] == rarity_choice and item['type'] == type_choice]
+    filtered = items
+    if rarity_choice != "all":
+        filtered = [item for item in filtered if item['rarity'] == rarity_choice]
+    if type_choice != "all":
+        filtered = [item for item in filtered if item['type'] == type_choice]
+    return sorted(filtered, key=lambda item: RARITY_ORDER.get(item['rarity'], float('inf')))
 
 items = fetch_items()
 
 rarity_options = ["all", "common", "uncommon", "rare", "legendary", "artifact"]
-type_options = ["all", "weapon", "staff", "wondrous item"]
-
+type_options = ["all", "weapon", "staff", "ring"]
 
 @app.route('/')
 def index():
@@ -56,3 +62,4 @@ def item_details(item_name):
 
 if __name__ == '__main__':
     app.run(debug=True)
+

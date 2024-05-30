@@ -86,13 +86,13 @@ html, body {
     background-color: #355ec6;
 }
 
-.veryrare {
-    background-color: rgb(220, 20, 60);
+.very-rare {
+    background-color: #ff0000;
     color: #fff;
 }
 
-.veryrare:hover {
-    background-color: rgb(193, 17, 53);
+.very-rare:hover {
+    background-color: #ff0000;
 }
 
 .legendary {

@@ -8,14 +8,14 @@
 </head>
 <body>
     <div class="topnav">
-        <a href="/">Home</a>
+        <a href="/">Filters</a>
     </div>
     <h1 class="center-content">Filtered Results</h1>
     <p class="center-content">Here are the Rarity: ({{ rarity_choice }}), Type: ({{ type_choice }}), Source: ({{ source_choice }}) choices:</p>
     {% if items %}
         <div class="center-content">
             {% for item in items %}
-                <a href="{{ url_for('item_details', item_name=item['name']) }}" class="button {{ item['rarity'] }}">{{ item['name'] }}</a>
+                <a href="{{ url_for('item_details', item_name=item['name']) }}" class="button {{ item['rarity'].replace(' ', '-') }}">{{ item['name'] }}</a>
             {% endfor %}
         </div>
     {% else %}

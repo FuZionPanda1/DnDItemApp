@@ -175,11 +175,19 @@
     "attunement": "attuned",
     "source": "TCE"},
 
-    {"name": "",
-    "rarity": "",
-    "type": "",
+    {"name": "Alchemical Compendium",
+    "rarity": "rare",
+    "type": "wondrous item",
     "description": "",
     "image": "",
-    "attunement": "",
-    "source": ""}
+    "attunement": "attuned",
+    "source": "TCE"},
+
+    {"name": "All-Purpose Tool",
+    "rarity": "rare",
+    "type": "wondrous item",
+    "description": "",
+    "image": "",
+    "attunement": "attuned",
+    "source": "TCE"}
 ]

@@ -106,9 +106,10 @@ def official_filter():
 def homebrew_filter():
     rarity_choice = request.form.get('rarity_choice').strip().lower()
     type_choice = request.form.get('type_choice').strip().lower()
+    source_choice = "HOMEBREW"
 
     if rarity_choice in [option.lower() for option in rarity_options] and type_choice in [option.lower() for option in type_options]:
-        filtered_items = filter_homebrew_items(homebrew_items, rarity_choice, type_choice)
+        filtered_items = filter_items(items, rarity_choice, type_choice, source_choice)
         return render_template('results.html', items=filtered_items, rarity_choice=rarity_choice, type_choice=type_choice, source_choice="n/a")
     else:
         return "Invalid rarity or type selection", 400

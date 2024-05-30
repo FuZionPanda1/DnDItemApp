@@ -933,6 +933,13 @@
     "description": "This wand has 3 charges. While holding it, you can use an action to expend 1 of its charges and target a humanoid you can see within 30 feet of you. The target must succeed on a DC 10 Charisma saving throw or be forced to smile for 1 minute. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand transforms into a Wand of Scowls.",
     "image": "",
     "attunement": "false",
-    "source": "XGE"}
+    "source": "XGE"},
 
+    {"name": "Ring of Exorcism", 
+    "rarity": "rare", 
+    "type": "wondrous item", 
+    "description": "This ring allows the wearer to", 
+    "image": "https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/ring_of_exorcism.png?raw=true",
+    "attunement": "attuned",
+    "source": "HOMEBREW"}
 ]

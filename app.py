@@ -45,10 +45,18 @@ type_options = ["all", "armor", "weapon", "staff", "ring", "wondrous item", "wan
 source_options = ["all", "SRD", "TCE", "XGE"]
 
 @app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/filters')
+def filters():
+    return render_template('filters.html')
+
+@app.route('/official_filter')
 def index():
     return render_template('index.html', rarity_options=rarity_options, type_options=type_options, source_options=source_options)
 
-@app.route('/filter', methods=['POST'])
+@app.route('/result', methods=['POST'])
 def filter():
     rarity_choice = request.form.get('rarity_choice').strip().lower()
     type_choice = request.form.get('type_choice').strip().lower()

@@ -51,7 +51,7 @@ def index():
 def filter():
     rarity_choice = request.form.get('rarity_choice').strip().lower()
     type_choice = request.form.get('type_choice').strip().lower()
-    source_choice = request.form.get('source_choice').strip().upper()  # Assuming sources are in uppercase in the data
+    source_choice = request.form.get('source_choice').strip().upper()
 
     if rarity_choice in [option.lower() for option in rarity_options] and type_choice in [option.lower() for option in type_options] and source_choice in [option.upper() for option in source_options]:
         filtered_items = filter_items(items, rarity_choice, type_choice, source_choice)

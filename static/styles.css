@@ -138,3 +138,19 @@ html, body {
     box-shadow: 0 3px #666;
     transform: translateY(3px);
 }
+
+.container {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+   
+img {
+     max-width: 100%;
+     max-height:100%;
+}
+   
+.text {
+     font-size: 20px;
+}

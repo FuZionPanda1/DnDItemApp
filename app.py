@@ -82,15 +82,15 @@ def home():
 def filters():
     return render_template('filters.html')
 
-@app.route('/official_filter')
+@app.route('/official/filter')
 def official_index():
     return render_template('official_index.html', rarity_options=rarity_options, type_options=type_options, source_options=source_options)
 
-@app.route('/homebrew_filter')
+@app.route('/homebrew/filter')
 def homebrew_index():
     return render_template('homebrew_index.html', rarity_options=rarity_options, type_options=type_options)
 
-@app.route('/official_result', methods=['POST'])
+@app.route('/official/result', methods=['POST'])
 def official_filter():
     rarity_choice = request.form.get('rarity_choice').strip().lower()
     type_choice = request.form.get('type_choice').strip().lower()
@@ -102,14 +102,14 @@ def official_filter():
     else:
         return "Invalid rarity, type, or source selection", 400
     
-@app.route('/homebrew_result', methods=['POST'])
+@app.route('/homebrew/result', methods=['POST'])
 def homebrew_filter():
     rarity_choice = request.form.get('rarity_choice').strip().lower()
     type_choice = request.form.get('type_choice').strip().lower()
 
     if rarity_choice in [option.lower() for option in rarity_options] and type_choice in [option.lower() for option in type_options]:
         filtered_items = filter_homebrew_items(homebrew_items, rarity_choice, type_choice)
-        return render_template('results.html', items=filtered_items, rarity_choice=rarity_choice, type_choice=type_choice, source_choice="Homebrew")
+        return render_template('results.html', items=filtered_items, rarity_choice=rarity_choice, type_choice=type_choice, source_choice="n/a")
     else:
         return "Invalid rarity or type selection", 400
 
@@ -117,6 +117,17 @@ def homebrew_filter():
 def item_details(item_name):
     item_name = item_name.lower()
     selected_item = next((item for item in items if item['name'].lower() == item_name), None)
+    if selected_item:
+        rarity = selected_item['rarity']
+        placeholder_image = PLACEHOLDER_IMAGES.get(rarity, PLACEHOLDER_IMAGES['common'])
+        return render_template('item.html', item=selected_item, placeholder_image=placeholder_image)
+    else:
+        return render_template('error.html', message=f"Item '{item_name}' not found"), 404
+    
+@app.route('/homebrew/item/<item_name>')
+def homebrew_item_details(item_name):
+    item_name = item_name.lower()
+    selected_item = next((item for item in homebrew_items if item['name'].lower() == item_name), None)
     if selected_item:
         rarity = selected_item['rarity']
         placeholder_image = PLACEHOLDER_IMAGES.get(rarity, PLACEHOLDER_IMAGES['common'])

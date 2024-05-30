@@ -12,7 +12,7 @@
         <a href="/filters">Filters</a>
     </div>
     <h1>Homebrew Magical Items Filter</h1>
-    <form action="/homebrew_result" method="POST">
+    <form action="/homebrew/result" method="POST">
         <label for="rarity_choice">Rarity:</label>
         <select name="rarity_choice" id="rarity_choice">
             {% for option in rarity_options %}
@@ -29,6 +29,6 @@
     
         <button type="submit">Filter</button>
     </form>
-    
+    <a href="javascript:window.history.back();" class="back-button">Back</a>
 </body>
 </html>

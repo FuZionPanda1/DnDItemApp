@@ -11,11 +11,16 @@
         <a href="/">Home</a>
         <a href="/filters">Filters</a>
     </div>
-    
-        <a href="javascript:window.history.back();" class="back-button">Back</a>
-    </div>
-    <h1 class="center-content">Filtered Results</h1>
-    <p class="center-content">Here are the Rarity: ({{ rarity_choice }}), Type: ({{ type_choice }}), Source: ({{ source_choice }}) choices:</p>
+    <a href="javascript:window.history.back();" class="back-button">Back</a>
+    <div class="container">
+        <div class="image">
+          <img src="https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/rarity_color_key.png?raw=true">
+        </div>
+        <div class="text">
+            <h1 class="center-content">Filtered Results</h1>
+            <p class="center-content">Here are the Rarity: ({{ rarity_choice }}), Type: ({{ type_choice }}), Source: ({{ source_choice }}) choices:</p>
+        </div>
+      </div>
     {% if items %}
         <div class="center-content">
             {% for item in items %}

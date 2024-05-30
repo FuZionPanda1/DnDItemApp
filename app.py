@@ -42,7 +42,7 @@ items = fetch_items()
 
 rarity_options = ["all", "common", "uncommon", "rare", "very rare", "legendary", "artifact"]
 type_options = ["all", "armor", "weapon", "staff", "ring", "wondrous item", "wand"]
-source_options = ["all", "SRD", "TCE"]
+source_options = ["all", "SRD", "TCE", "XGE"]
 
 @app.route('/')
 def index():

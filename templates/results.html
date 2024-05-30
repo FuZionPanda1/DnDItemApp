@@ -11,6 +11,9 @@
         <a href="/">Home</a>
         <a href="/filters">Filters</a>
     </div>
+    
+        <a href="javascript:window.history.back();" class="back-button">Back</a>
+    </div>
     <h1 class="center-content">Filtered Results</h1>
     <p class="center-content">Here are the Rarity: ({{ rarity_choice }}), Type: ({{ type_choice }}), Source: ({{ source_choice }}) choices:</p>
     {% if items %}
@@ -22,8 +25,5 @@
     {% else %}
         <p class="center-content">No items found for rarity: {{ rarity_choice }}, type: {{ type_choice }}, and source: {{ source_choice }}</p>
     {% endif %}
-    <div class="center-content">
-    <a href="/filters" class="back-button">Back to filter</a>
-    </div>
 </body>
 </html>

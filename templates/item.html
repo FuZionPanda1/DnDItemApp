@@ -17,7 +17,7 @@
     <p><strong>Description:</strong> {{ item['description'] }}</p>
     <img id="item-image" src="{{ item['image'] or 'https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder.png?raw=true' }}" alt="{{ item['name'] }} image" style="max-width: 10%; height: auto;">
     <br>
-    <a href="/filters">Back to filter</a>
+    <a href="javascript:window.history.back();">Back</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

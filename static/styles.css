@@ -86,6 +86,15 @@ html, body {
     background-color: #355ec6;
 }
 
+.very_rare {
+    background-color: crimson;
+    color: #fff;
+}
+
+.very_rare:hover {
+    background-color: rgb(193, 17, 53);
+}
+
 .legendary {
     background-color: #ff8c00;
     color: #fff;

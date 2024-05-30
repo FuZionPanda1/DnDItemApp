@@ -98,7 +98,7 @@ def official_filter():
 
     if rarity_choice in [option.lower() for option in rarity_options] and type_choice in [option.lower() for option in type_options] and source_choice in [option.upper() for option in source_options]:
         filtered_items = filter_items(items, rarity_choice, type_choice, source_choice)
-        return render_template('results.html', items=filtered_items, rarity_choice=rarity_choice, type_choice=type_choice, source_choice=source_choice)
+        return render_template('official_results.html', items=filtered_items, rarity_choice=rarity_choice, type_choice=type_choice, source_choice=source_choice)
     else:
         return "Invalid rarity, type, or source selection", 400
     
@@ -120,7 +120,7 @@ def item_details(item_name):
     if selected_item:
         rarity = selected_item['rarity']
         placeholder_image = PLACEHOLDER_IMAGES.get(rarity, PLACEHOLDER_IMAGES['common'])
-        return render_template('official_item.html', item=selected_item, placeholder_image=placeholder_image)
+        return render_template('item.html', item=selected_item, placeholder_image=placeholder_image)
     else:
         return render_template('error.html', message=f"Item '{item_name}' not found"), 404
     

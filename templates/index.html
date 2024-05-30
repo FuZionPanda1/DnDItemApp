@@ -11,20 +11,30 @@
         <a href="/" class="active">Home</a>
     </div>
     <h1>Magic Item Filter</h1>
-    <form action="/filter" method="post">
+    <form action="/filter" method="POST">
         <label for="rarity_choice">Rarity:</label>
         <select name="rarity_choice" id="rarity_choice">
-            {% for rarity in rarity_options %}
-                <option value="{{ rarity }}">{{ rarity.capitalize() }}</option>
+            {% for option in rarity_options %}
+                <option value="{{ option }}">{{ option }}</option>
             {% endfor %}
         </select>
+    
         <label for="type_choice">Type:</label>
         <select name="type_choice" id="type_choice">
-            {% for type in type_options %}
-                <option value="{{ type }}">{{ type.capitalize() }}</option>
+            {% for option in type_options %}
+                <option value="{{ option }}">{{ option }}</option>
             {% endfor %}
         </select>
+    
+        <label for="source_choice">Source:</label>
+        <select name="source_choice" id="source_choice">
+            {% for option in source_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+    
         <button type="submit">Filter</button>
     </form>
+    
 </body>
 </html>

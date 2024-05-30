@@ -14,14 +14,14 @@
     <p><strong>Rarity:</strong> {{ item['rarity'] }}</p>
     <p><strong>Type:</strong> {{ item['type'] }}</p>
     <p><strong>Description:</strong> {{ item['description'] }}</p>
-    <img id="item-image" src="{{ item['image'] or 'https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder.png?raw=attuned' }}" alt="{{ item['name'] }} image" style="max-width: 10%; height: auto;">
+    <img id="item-image" src="{{ item['image'] or 'https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder.png?raw=true' }}" alt="{{ item['name'] }} image" style="max-width: 10%; height: auto;">
     <br>
     <a href="/">Back to filter</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var img = document.getElementById('item-image');
-            var placeholderImage = "https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder.png?raw=attuned";
+            var placeholderImage = "https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder.png?raw=true";
 
             img.onerror = function() {
                 img.src = placeholderImage;

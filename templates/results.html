@@ -11,7 +11,7 @@
         <a href="/">Home</a>
     </div>
     <h1 class="center-content">Filtered Results</h1>
-    <p class="center-content">Here are the Rarirty: ({{ rarity_choice }}) Type: ({{ type_choice }}) choices:</p>
+    <p class="center-content">Here are the Rarity: ({{ rarity_choice }}), Type: ({{ type_choice }}), Source: ({{ source_choice }}) choices:</p>
     {% if items %}
         <div class="center-content">
             {% for item in items %}
@@ -19,7 +19,7 @@
             {% endfor %}
         </div>
     {% else %}
-        <p class="center-content">No items found for rarity: {{ rarity_choice }} and type: {{ type_choice }}</p>
+        <p class="center-content">No items found for rarity: {{ rarity_choice }}, type: {{ type_choice }}, and source: {{ source_choice }}</p>
     {% endif %}
     <div class="center-content">
     <a href="/" class="back-button">Back to filter</a>

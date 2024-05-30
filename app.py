@@ -55,13 +55,13 @@ def filter_items(items, rarity_choice, type_choice, source_choice):
     return sorted(filtered, key=lambda item: RARITY_ORDER.get(item['rarity'], float('inf')))
 
 def filter_homebrew_items(items, rarity_choice, type_choice):
-    filtered = items
+    hb_filtered = items
     if rarity_choice != "":
         if rarity_choice != "all":
-            filtered = [item for item in filtered if item['rarity'] == rarity_choice]
+            hb_filtered = [item for item in hb_filtered if item['rarity'] == rarity_choice]
         if type_choice != "all":
-            filtered = [item for item in filtered if item['type'] == type_choice]
-    return sorted(filtered, key=lambda item: RARITY_ORDER.get(item['rarity'], float('inf')))
+            hb_filtered = [item for item in hb_filtered if item['type'] == type_choice]
+    return sorted(hb_filtered, key=lambda item: RARITY_ORDER.get(item['rarity'], float('inf')))
 
 
 
@@ -108,8 +108,8 @@ def homebrew_filter():
     type_choice = request.form.get('type_choice').strip().lower()
 
     if rarity_choice in [option.lower() for option in rarity_options] and type_choice in [option.lower() for option in type_options]:
-        filtered_items = filter_homebrew_items(homebrew_items, rarity_choice, type_choice)
-        return render_template('results.html', items=filtered_items, rarity_choice=rarity_choice, type_choice=type_choice, source_choice="n/a")
+        hb_filtered_items = filter_homebrew_items(homebrew_items, rarity_choice, type_choice)
+        return render_template('homebrew_results.html', items=hb_filtered_items, rarity_choice=rarity_choice, type_choice=type_choice, source_choice="n/a")
     else:
         return "Invalid rarity or type selection", 400
 
@@ -120,7 +120,7 @@ def item_details(item_name):
     if selected_item:
         rarity = selected_item['rarity']
         placeholder_image = PLACEHOLDER_IMAGES.get(rarity, PLACEHOLDER_IMAGES['common'])
-        return render_template('item.html', item=selected_item, placeholder_image=placeholder_image)
+        return render_template('official_item.html', item=selected_item, placeholder_image=placeholder_image)
     else:
         return render_template('error.html', message=f"Item '{item_name}' not found"), 404
     

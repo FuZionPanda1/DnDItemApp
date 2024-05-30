@@ -400,7 +400,7 @@
     "source": "TCE"},
 
     {"name": "Absorbing Tattoo",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -408,7 +408,7 @@
     "source": "TCE"},
 
     {"name": "All-Purpose Tool",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -416,7 +416,7 @@
     "source": "TCE"},
 
     {"name": "Amulet of the Devout",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -424,7 +424,7 @@
     "source": "TCE"},
 
     {"name": "Arcane Grimoire",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -432,7 +432,7 @@
     "source": "TCE"},
 
     {"name": "Barrier Tattoo",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -440,7 +440,7 @@
     "source": "TCE"},
 
     {"name": "Bloodwall Vial",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -448,7 +448,7 @@
     "source": "TCE"},
 
     {"name": "Cauldron of Rebirth",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -456,7 +456,7 @@
     "source": "TCE"},
 
     {"name": "Crystalline Chronicle",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -464,7 +464,7 @@
     "source": "TCE"},
 
     {"name": "Ghost Step Tattoo",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -472,7 +472,7 @@
     "source": "TCE"},
 
     {"name": "Lifewell Tattoo",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "wondrous item",
     "description": "",
     "image": "",
@@ -480,7 +480,7 @@
     "source": "TCE"},
 
     {"name": "Moon Sickle",
-    "rarity": "legendary",
+    "rarity": "very rare",
     "type": "weapon",
     "description": "",
     "image": "",
@@ -488,7 +488,15 @@
     "source": "TCE"},
 
     {"name": "Rhythm Maker's Drum",
-    "rarity": "legendary",
+    "rarity": "very rare",
+    "type": "wondrous item",
+    "description": "",
+    "image": "",
+    "attunement": "attuned",
+    "source": "TCE"},
+
+    {"name": "",
+    "rarity": "artifact",
     "type": "wondrous item",
     "description": "",
     "image": "",

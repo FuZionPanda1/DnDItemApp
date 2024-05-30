@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="topnav">
-        <a href="/">Filters</a>
+        <a href="/">Home</a>
+        <a href="/filters">Filters</a>
     </div>
     <h1>{{ item['name'] }}</h1>
     <p><strong>Rarity:</strong> {{ item['rarity'] }}</p>
@@ -16,7 +17,7 @@
     <p><strong>Description:</strong> {{ item['description'] }}</p>
     <img id="item-image" src="{{ item['image'] or 'https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder.png?raw=true' }}" alt="{{ item['name'] }} image" style="max-width: 10%; height: auto;">
     <br>
-    <a href="/">Back to filter</a>
+    <a href="/filters">Back to filter</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

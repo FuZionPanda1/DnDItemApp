@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="topnav">
-        <a href="/">Filters</a>
+        <a href="/">Home</a>
+        <a href="/filters">Filters</a>
     </div>
     <h1 class="center-content">Filtered Results</h1>
     <p class="center-content">Here are the Rarity: ({{ rarity_choice }}), Type: ({{ type_choice }}), Source: ({{ source_choice }}) choices:</p>
@@ -22,7 +23,7 @@
         <p class="center-content">No items found for rarity: {{ rarity_choice }}, type: {{ type_choice }}, and source: {{ source_choice }}</p>
     {% endif %}
     <div class="center-content">
-    <a href="/" class="back-button">Back to filter</a>
+    <a href="/filters" class="back-button">Back to filter</a>
     </div>
 </body>
 </html>

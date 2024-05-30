@@ -54,7 +54,7 @@ def filters():
 
 @app.route('/official_filter')
 def index():
-    return render_template('index.html', rarity_options=rarity_options, type_options=type_options, source_options=source_options)
+    return render_template('official_index.html', rarity_options=rarity_options, type_options=type_options, source_options=source_options)
 
 @app.route('/result', methods=['POST'])
 def filter():

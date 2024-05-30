@@ -86,12 +86,12 @@ html, body {
     background-color: #355ec6;
 }
 
-.very_rare {
+.veryrare {
     background-color: rgb(220, 20, 60);
     color: #fff;
 }
 
-.very_rare:hover {
+.veryrare:hover {
     background-color: rgb(193, 17, 53);
 }
 

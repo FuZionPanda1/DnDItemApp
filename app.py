@@ -10,7 +10,7 @@ RARITY_ORDER = {
     "common": 1,
     "uncommon": 2,
     "rare": 3,
-    "very_rare": 4,
+    "very rare": 4,
     "legendary": 5,
     "artifact": 6
 }
@@ -40,7 +40,7 @@ def filter_items(items, rarity_choice, type_choice, source_choice):
 
 items = fetch_items()
 
-rarity_options = ["all", "common", "uncommon", "rare", "very_rare", "legendary", "artifact"]
+rarity_options = ["all", "common", "uncommon", "rare", "very rare", "legendary", "artifact"]
 type_options = ["all", "weapon", "staff", "ring", "wondrous item"]
 source_options = ["all", "SRD", "TCE"]
 

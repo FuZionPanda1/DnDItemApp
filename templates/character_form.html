@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Pandas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/filters">Filters</a>
+        <a href="/create-character" class="active">Character Creator</a>
+    </div>
+    <h1>Create Character Sheet</h1>
+    <form id="characterForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="race">Race:</label>
+        <input type="text" id="race" name="race" required><br>
+        <label for="class">Class:</label>
+        <input for="class" id="class" name="class" required><br>
+
+        <button type="button" onclick="saveCharacterSheet()">Save Character Sheet</button>
+    </form>
+
+    <script>
+        function saveCharacterSheet() {
+            const form = document.getElementById('characterForm');
+            const formData = new FormData(form);
+            const characterData = {};
+
+            formData.forEach((value, key) => {
+                characterData[key] = value;
+            });
+
+            const blob = new Blob([JSON.stringify(characterData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${characterData.name}.dnp`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

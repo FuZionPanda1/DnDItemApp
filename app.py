@@ -1,8 +1,13 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for, flash
 import urllib.request
 import json
+import os
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
+UPLOAD_FOLDER = 'uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 GITHUB_RAW_URL = "https://raw.githubusercontent.com/FuZionPanda1/DnDItemApp/main/items.json"
 
@@ -25,6 +30,9 @@ PLACEHOLDER_IMAGES = {
     "legendary": "https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder_legendary.png?raw=true",
     "artifact": "https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder_artifact.png?raw=true"
 }
+
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
 
 def fetch_items():
     try:
@@ -77,6 +85,39 @@ source_options = ["all", "SRD", "TCE", "XGE"]
 @app.route('/')
 def home():
     return render_template('home.html')
+
+
+@app.route('/create-character')
+def create_character():
+    return render_template('character_form.html')
+
+@app.route('/upload-character')
+def upload_character_form():
+    return render_template('upload_form.html')
+
+@app.route('/upload-character', methods=['POST'])
+def upload_character():
+    if 'file' not in request.files:
+        flash('No file part')
+        return redirect(request.url)
+    file = request.files['file']
+    if file.filename == '':
+        flash('No selected file')
+        return redirect(request.url)
+    if file and file.filename.endswith('.dnp'):
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+        file.save(file_path)
+        return redirect(url_for('display_character', filename=file.filename))
+    else:
+        flash('Invalid file type')
+        return redirect(request.url)
+
+@app.route('/character/<filename>')
+def display_character(filename):
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    with open(file_path, 'r') as file:
+        character = json.load(file)
+    return render_template('character_sheet.html', character=character)
 
 @app.route('/filters')
 def filters():
@@ -134,6 +175,7 @@ def homebrew_item_details(item_name):
         return render_template('item.html', item=selected_item, placeholder_image=placeholder_image)
     else:
         return render_template('error.html', message=f"Item '{item_name}' not found"), 404
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

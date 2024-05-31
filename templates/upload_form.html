@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
+    <title>Dungeons & Pandas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -12,8 +12,12 @@
         <a href="/filters">Filters</a>
         <a href="/create-character">Character Creator</a>
     </div>
-    <h1>Error</h1>
-    <p>{{ message }}</p>
-    <a href="javascript:window.history.back();">Back</a>
+
+    <h1>Upload Character Sheet</h1>
+    <form action="/upload-character" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".dnp" required>
+        <button type="submit">Upload</button>
+    </form>
+    <a href="javascript:window.history.back();" class="back-button">Back</a>
 </body>
 </html>

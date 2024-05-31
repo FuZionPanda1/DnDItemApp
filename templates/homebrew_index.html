@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic Item Filter</title>
+    <title>Dungeons & Pandas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="topnav">
-        <a href="/" class="active">Home</a>
+        <a href="/">Home</a>
+        <a href="/filters">Filters</a>
+        <a href="/create-character">Character Creator</a>
     </div>
-    <h1>Magic Item Filter</h1>
-    <form action="/filter" method="POST">
+    <h1>Homebrew Magical Items Filter</h1>
+    <form action="/homebrew/result" method="POST">
         <label for="rarity_choice">Rarity:</label>
         <select name="rarity_choice" id="rarity_choice">
             {% for option in rarity_options %}
@@ -26,15 +28,8 @@
             {% endfor %}
         </select>
     
-        <label for="source_choice">Source:</label>
-        <select name="source_choice" id="source_choice">
-            {% for option in source_options %}
-                <option value="{{ option }}">{{ option }}</option>
-            {% endfor %}
-        </select>
-    
         <button type="submit">Filter</button>
     </form>
-    
+    <a href="javascript:window.history.back();" class="back-button">Back</a>
 </body>
 </html>

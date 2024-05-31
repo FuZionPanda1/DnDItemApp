@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Pandas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/filters">Filters</a>
+        <a href="/create-character">Character Creator</a>
+    </div>
+    <h1>Official Magical Items Filter</h1>
+    <form action="/official/result" method="POST">
+        <label for="rarity_choice">Rarity:</label>
+        <select name="rarity_choice" id="rarity_choice">
+            {% for option in rarity_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+    
+        <label for="type_choice">Type:</label>
+        <select name="type_choice" id="type_choice">
+            {% for option in type_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+    
+        <label for="source_choice">Source:</label>
+        <select name="source_choice" id="source_choice">
+            {% for option in source_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+    
+        <button type="submit">Filter</button>
+    </form>
+    <a href="javascript:window.history.back();" class="back-button">Back</a>
+</body>
+</html>

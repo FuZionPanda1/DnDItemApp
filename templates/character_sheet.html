@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Pandas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/filters">Filters</a>
+        <a href="/create-character">Character Creator</a>
+    </div>
+    
+    <a href="javascript:window.history.back();" class="back-button">Back</a>
+    <br>
+    <br>
+    <br>
+    <h1>Character Sheet for {{ character.name }}</h1>
+    <p><strong>Race:</strong> {{ character.race }}</p>
+    <p><strong>Class:</strong> {{ character.class }}</p>
+    <!-- Add more fields as necessary -->
+</body>
+</html>

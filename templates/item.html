@@ -9,19 +9,21 @@
 <body>
     <div class="topnav">
         <a href="/">Home</a>
+        <a href="/filters">Filters</a>
+        <a href="/create-character">Character Creator</a>
     </div>
+    <a href="javascript:window.history.back();" class="back-button">Back</a>
     <h1>{{ item['name'] }}</h1>
     <p><strong>Rarity:</strong> {{ item['rarity'] }}</p>
     <p><strong>Type:</strong> {{ item['type'] }}</p>
     <p><strong>Description:</strong> {{ item['description'] }}</p>
-    <img id="item-image" src="{{ item['image'] or 'https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder.png?raw=true' }}" alt="{{ item['name'] }} image" style="max-width: 10%; height: auto;">
+    <img id="item-image" src="{{ item['image'] or 'placeholder_image' }}" alt="{{ item['name'] }} image" style="max-width: 10%; height: auto;">
     <br>
-    <a href="/">Back to filter</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var img = document.getElementById('item-image');
-            var placeholderImage = "https://github.com/FuZionPanda1/DnDItemApp/blob/main/images/placeholder.png?raw=true";
+            var placeholderImage = "{{ placeholder_image }}"
 
             img.onerror = function() {
                 img.src = placeholderImage;

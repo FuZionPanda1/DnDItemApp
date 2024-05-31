@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Dungeons & Pandas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/filters" class="active">Filters</a>
+    </div>
+
+    <h1>Choose what filter you would like to choose!</h1>
+    <a href="/official/filter" class="back-button">Official Filter</a>
+    <a href="/homebrew/filter" class="back-button">Homebrew Filter</a>
+
+</body>
+</html>

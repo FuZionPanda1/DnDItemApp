@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Pandas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/filters">Filters</a>
+        <a href="/create-character">Character Creator</a>
+    </div>
+
+    <h1>Upload Character Sheet</h1>
+    <form action="/upload-character" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".dnp" required>
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <a href="javascript:window.history.back();" class="back-button">Back</a>
+</body>
+</html>

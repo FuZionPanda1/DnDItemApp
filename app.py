@@ -80,7 +80,7 @@ homebrew_items = fetch_homebrew_items()
 
 rarity_options = ["all", "common", "uncommon", "rare", "very rare", "legendary", "artifact"]
 type_options = ["all", "armor", "weapon", "staff", "ring", "wondrous item", "wand"]
-source_options = ["all", "SRD", "TCE", "XGE"]
+source_options = ["all", "SRD", "TCE", "XGE", "WDH", "WDM"]
 race_options = ["human", "not human","custom"]
 class_options = ["employed","unemployed","custom"]
 

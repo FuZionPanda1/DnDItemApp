@@ -17,9 +17,17 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
         <label for="race">Race:</label>
-        <input type="text" id="race" name="race" required><br>
+        <select name="race_choice" id="race_choice">
+            {% for option in race_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
         <label for="class">Class:</label>
-        <input for="class" id="class" name="class" required><br>
+        <select name="class_choice" id="class_choice">
+            {% for option in class_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
 
         <button type="button" onclick="saveCharacterSheet()">Save Character Sheet</button>
     </form>

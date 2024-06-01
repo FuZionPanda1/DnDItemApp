@@ -81,6 +81,8 @@ homebrew_items = fetch_homebrew_items()
 rarity_options = ["all", "common", "uncommon", "rare", "very rare", "legendary", "artifact"]
 type_options = ["all", "armor", "weapon", "staff", "ring", "wondrous item", "wand"]
 source_options = ["all", "SRD", "TCE", "XGE"]
+race_options = ["human", "not human","custom"]
+class_options = ["enployed","unenployed","custom"]
 
 @app.route('/')
 def home():
@@ -89,7 +91,7 @@ def home():
 
 @app.route('/create-character')
 def create_character():
-    return render_template('character_form.html')
+    return render_template('character_form.html', race_options = race_options, class_options = class_options)
 
 @app.route('/upload-character')
 def upload_character_form():

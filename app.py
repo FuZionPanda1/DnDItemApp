@@ -82,9 +82,8 @@ rarity_options = ["all", "common", "uncommon", "rare", "very rare", "legendary",
 type_options = ["all", "armor", "weapon", "staff", "ring", "wondrous item", "wand"]
 source_options = ["all", "SRD", "TCE", "XGE"]
 race_options = ["human", "not human","custom"]
-class_options = ["enployed","unenployed","custom"]
+class_options = ["employed","unemployed","custom"]
 
-race_options = ["human", "dragonborn"]
 
 @app.route('/')
 def home():

@@ -84,6 +84,8 @@ source_options = ["all", "SRD", "TCE", "XGE"]
 race_options = ["human", "not human","custom"]
 class_options = ["enployed","unenployed","custom"]
 
+race_options = ["human", "dragonborn"]
+
 @app.route('/')
 def home():
     return render_template('home.html')

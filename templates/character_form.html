@@ -17,13 +17,13 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
         <label for="race">Race:</label>
-        <select name="race_choice" id="race_choice">
+        <select name="race" id="race">
             {% for option in race_options %}
                 <option value="{{ option }}">{{ option }}</option>
             {% endfor %}
         </select>
         <label for="class">Class:</label>
-        <select name="class_choice" id="class_choice">
+        <select name="class" id="class">
             {% for option in class_options %}
                 <option value="{{ option }}">{{ option }}</option>
             {% endfor %}

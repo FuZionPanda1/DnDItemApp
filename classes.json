@@ -1,0 +1,13 @@
+[
+{"name": "employed",
+"Features": "source of income",
+"L1": "minimum wage",
+"L2": "middleclass",
+"L3": "Louds of cash"},
+
+{"name": "unemployed",
+"Features": "free time",
+"L1": "Moms basement",
+"L2": "Friends coush",
+"L3": "Sneaking in to hotell buffes"}
+]

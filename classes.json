@@ -1,13 +1,41 @@
 [
 {"name": "employed",
-"Features": "source of income",
-"L1": "minimum wage",
-"L2": "middleclass",
-"L3": "Louds of cash"},
+"features": [
+ {
+    "level": 1,
+    "feature name": "minimum wage",
+    "decription": "low amount of money"
+ },
+ {
+    "level": 2,
+    "feature name": "comfortobale wage",
+    "decription": "enought money to have some over for other stuff"
+ },
+ {
+    "level": 3,
+    "feature name": "louds of money",
+    "decription": "got alot of despoable income"
+ }
+]
+},
 
 {"name": "unemployed",
-"Features": "free time",
-"L1": "Moms basement",
-"L2": "Friends coush",
-"L3": "Sneaking in to hotell buffes"}
+"features": [
+ {
+    "level": 1,
+    "feature name": "moms basement",
+    "decription": "your moms basment has small couch and tv"
+ },
+ {
+    "level": 2,
+    "feature name": "firends couch",
+    "decription": "playing video games untill you pass out in you friends house"
+ },
+ {
+    "level": 3,
+    "feature name": "hotel buffe",
+    "decription": "sneak in to a hotel buffe for free food"
+ }
+]
+}
 ]

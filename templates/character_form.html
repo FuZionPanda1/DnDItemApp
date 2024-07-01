@@ -28,6 +28,9 @@
                 <option value="{{ option }}">{{ option }}</option>
             {% endfor %}
         </select>
+        <label for="level">Level:</label>
+        <input type="number" id="level" name="level" min="1" max="20">
+
 
         <button type="button" onclick="saveCharacterSheet()">Save Character Sheet</button>
     </form>

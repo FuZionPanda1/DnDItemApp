@@ -13,6 +13,8 @@ GITHUB_RAW_URL = "https://raw.githubusercontent.com/FuZionPanda1/DnDItemApp/main
 
 GITHUB_HOMEBREW_URL = "https://raw.githubusercontent.com/FuZionPanda1/DnDItemApp/main/homebrew_items.json"
 
+GITHUB_CLASSES_URL = "https://raw.githubusercontent.com/FuZionPanda1/DnDItemApp/main/classes.json"
+
 RARITY_ORDER = {
     "common": 1,
     "uncommon": 2,
@@ -51,6 +53,16 @@ def fetch_homebrew_items():
     except urllib.error.URLError as e:
         print(f"Failed to fetch homebrew data: {e.reason}")
         return []    
+    
+def fetch_class_features():
+    try:
+        with urllib.request.urlopen(GITHUB_CLASSES_URL) as url:
+            data = url.read().decode()
+            return json.loads(data)
+    except urllib.error.URLError as e:
+        print(f"Failed to fetch homebrew data: {e.reason}")
+        return []
+
 
 def filter_items(items, rarity_choice, type_choice, source_choice):
     filtered = items
@@ -83,6 +95,7 @@ type_options = ["all", "armor", "weapon", "staff", "ring", "wondrous item", "wan
 source_options = ["all", "SRD", "TCE", "XGE", "WDH", "WDM"]
 race_options = ["human", "not human","custom"]
 class_options = ["employed","unemployed","custom"]
+level_options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
 
 
 @app.route('/')
@@ -92,7 +105,7 @@ def home():
 
 @app.route('/create-character')
 def create_character():
-    return render_template('character_form.html', race_options = race_options, class_options = class_options)
+    return render_template('character_form.html', race_options = race_options, class_options = class_options, level_options = level_options)
 
 @app.route('/upload-character')
 def upload_character_form():
